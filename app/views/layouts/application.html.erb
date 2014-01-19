@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Teststrap" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Cleartime TV" %></title>
     <%= csrf_meta_tags %>
 
     <%#= Le HTML5 shim, for IE6-8 support of HTML elements %>
@@ -45,36 +45,35 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="./index.html">Bootstrap</a>
+          <a class="brand" href="./index.html">Cleartime</a>
           <div class="nav-collapse collapse">
-            <ul class="nav">
+            <ul class="nav pull-right">
               <li class="active">
                 <%= link_to "Home", root_path %>
               </li>
-              <li class="">
-                <%= link_to "Get started", getting_started_path %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Packages<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Package 1" %></li>
+                  <li><%= link_to "Package 2" %></li>
+                  <li><%= link_to "Package 3" %></li>
+                </ul>
               </li>
               <li class="">
-                <%= link_to "Scaffolding", scaffolding_path %>
+                <%= link_to "Contact" %>
               </li>
               <li class="">
-                <%= link_to "Base CSS", base_css_path %>
+                <%= link_to "About Us" %>
               </li>
               <li class="">
-                <%= link_to "Components", components_path %>
-              </li>
-              <li class="">
-                <%= link_to "Javascript", javascript_path %>
-              </li>
-              <li class="">
-                <%= link_to "Customize", customize_path %>
+                <%= link_to "Refferals" %>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
+    <!-- <div class="container"> -->
       <div class="row">
       <div class="messages span9">
         <%= bootstrap_flash %>
@@ -84,13 +83,13 @@
         <%= render_breadcrumbs %>
         <%= yield %>
       </div>
-    </div>
+    <!-- </div> -->
 
     <!-- Footer
     ================================================== -->
     <footer class="footer">
       <div class="container">
-        <p class="pull-right"><a href="#">Back to top</a></p>
+        <!-- <p class="pull-right"><a href="#">Back to top</a></p>
         <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
@@ -98,7 +97,7 @@
           <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
           <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
           <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
-        </ul>
+        </ul> -->
       </div>
     </footer>
 
