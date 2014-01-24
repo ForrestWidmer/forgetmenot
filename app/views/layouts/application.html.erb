@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Cleartime TV" %></title>
     <%= csrf_meta_tags %>
+    <script>
+      $(function(){
+      $('#myCarousel').carousel();
+        });
+    </script>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=501906479910208";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <%#= Le HTML5 shim, for IE6-8 support of HTML elements %>
     <!-- [if lt IE 9]>
@@ -16,19 +29,19 @@
 
     <%#= For third-generation iPad with high-resolution Retina display: %>
     <%#= Size should be 144 x 144 pixels %>
-    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+    <%= favicon_link_tag 'favicon.ico', :type => 'image/png', :sizes => '144x144' %>
 
     <%#= For iPhone with high-resolution Retina display: %>
     <%#= Size should be 114 x 114 pixels %>
-    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+    <%= favicon_link_tag 'favicon.ico', :type => 'image/png', :sizes => '114x114' %>
 
     <%#= For first- and second-generation iPad: %>
     <%#= Size should be 72 x 72 pixels %>
-    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+    <%= favicon_link_tag 'favicon.ico', :type => 'image/png', :sizes => '72x72' %>
 
     <%#= For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: %>
     <%#= Size should be 57 x 57 pixels %>
-    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag 'favicon.ico', :type => 'image/png' %>
 
     <%#= For all other devices %>
     <%#= Size should be 32 x 32 pixels %>
@@ -45,59 +58,61 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="./index.html">Cleartime</a>
+          <%= link_to "Cleartime TV", root_path, class: 'brand' %>
+          <!--<a class="brand" href="">Cleartime</a>-->
           <div class="nav-collapse collapse">
             <ul class="nav pull-right">
-              <li class="active">
+              <li class="">
                 <%= link_to "Home", root_path %>
               </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Packages<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Package 1" %></li>
-                  <li><%= link_to "Package 2" %></li>
-                  <li><%= link_to "Package 3" %></li>
-                </ul>
+              <li class="">
+                <%= link_to("Packages", root_path(anchor: "pack")) %>
+                <!--<%= link_to "Packages", root_path, :anchor => "pack" %>-->
               </li>
               <li class="">
-                <%= link_to "Contact" %>
+                <%= link_to "Contact", contact_new_path %>
               </li>
               <li class="">
-                <%= link_to "About Us" %>
+                <%= link_to "About Us", welcome_about_path %>
               </li>
               <li class="">
-                <%= link_to "Refferals" %>
+                <%= link_to "Referrals", welcome_referral_path %>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="container"> -->
-      <div class="row">
-      <div class="messages span9">
+    <div class="container">
+      <div class="row text-center">
         <%= bootstrap_flash %>
-      </div>
       </div>
       <div class="row">
         <%= render_breadcrumbs %>
-        <%= yield %>
+        
       </div>
+    </div>
+      <%= yield %>
     <!-- </div> -->
 
     <!-- Footer
     ================================================== -->
     <footer class="footer">
       <div class="container">
-        <!-- <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <ul class="footer-links">
-          <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
-          <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
-          <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
-        </ul> -->
+        <div class="row-fluid">
+          <div class="span6 columns">        
+            <p>Want to brag about our service? Post it on Facebook! <a href="https://www.facebook.com/pages/Cleartime-TV-LLC/737683746259428"><img src="/assets/facebook.png"></a></p>
+            <p>On Twitter? Follow us! <a href=""><img src="/assets/tweet.png"></a></p>
+            <p>Website created by <a href="http://www.forrestwidmer.com/">forrestwidmer.com</a></p>
+          </div>
+
+          <div class="span6 columns text-right">
+            <p><a href="#">Back to top</a></p>
+              <p>Owned and Operated by: William Watkins</p>
+              <p>(602)531-7375</p>
+              <p>cleartimetv@mail.com</p>
+          </div>
+        </div>
       </div>
     </footer>
 

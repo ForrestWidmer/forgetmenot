@@ -1,0 +1,95 @@
+<!--  -->
+  <div class="hero-unit-norm">
+    <div class="container marketing">
+      <div class="row-fluid">
+        <div class="span12">
+          <h1>We want to hear from you!</h1>
+          <h3>If you want to order new service, have a question, or just want to say "hello!" then fill out the form below and we will get back to you as soon as possible!</h3>
+        </div>
+      </div>
+    <hr class="soften">
+    </div>
+  </div>
+
+      <div class="container">    
+        <div class="row-fluid marketing">
+          <div class="span6 columns">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="hero-unit">
+              <address>
+                <h2><b>Cleartime TV, LL</b>C</h2>
+                <h3>Open: Monday - Saturday</h3>
+                <h3>Office Hours: 8:00AM - 8:00PM (MST)</h3>
+                <h3>Office Number: (602)531-7375</h3>
+                <h3>Email: cleartimetv@mail.com</h3>
+              </address>
+            </div>
+          </div>
+          <div class="span6 columns text-center">
+          <%= form_for @message, :url => contact_path do |form| %>
+          <fieldset class="fields span12 form-horizontal">
+            <div class="row-fluid">
+              <div class="span12">
+                <div class="field">
+                  <%= form.label :name %>
+                  <%= form.text_field :name %>
+                </div>
+              </div>
+            </div>
+
+          <!--<div class="row-fluid">
+            <div class="span12">
+              <div class="field">
+                <%= form.label :company %>
+                <%= form.text_field :company %>
+              </div>
+            </div>
+          </div>-->
+              
+          <div class="row-fluid">
+            <div class="span12">
+              <div class="field">
+                <%= form.label :email %>
+                <%= form.text_field :email %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-fluid">
+            <div class="span12">    
+              <div class="field">
+                <%= form.label :subject %>
+                <%= form.text_field :subject %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-fluid">
+            <div class="span12">    
+              <div class="field">
+                <%= form.label :message %>
+                <%= form.text_area :body, :placeholder => "Please include your phone number, day to reach you, and AM or PM." %>
+
+              </div>
+            </div>
+          </div>  
+            
+            
+          <div class="row-fluid">
+            <div class="span12">  
+              <div class="actions text-center">
+                <%= form.submit "Send", class: 'btn btn-large btn-inverse' %>
+              </div>
+            </div>
+          </div>
+
+          <% end %>
+          </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>

@@ -15,6 +15,12 @@ body {
   padding-top: 40px;
 }
 
+.center {
+ float: none;
+ margin-left: auto;
+ margin-right: auto;
+}
+
 /* Code in headings */
 h3 code {
   font-size: 14px;
@@ -34,16 +40,41 @@ padding: 0;
 margin: 10px 0 10px 25px;
 }
 
+textarea {
+height: auto;
+max-height: 350px;
+width: 275px;
+}
+
+.p-custom {
+font-size: 16px;
+font-weight: 300;
+line-height: 1.5px;
+margin-bottom: 0px;
+padding-top: 10px;
+padding-bottom: -10px;
+
+}
+
+h9 {
+font-size: 10em;
+font-weight: 200;
+line-height: 1;
+letter-spacing: -1px;
+padding-left: 10px;
+color: black;
+}
+
 /* Modal's and visuals
 -------------------------------------------------- */
 
 .first-column {
-  width: 30%;
+  width: auto;
   float: left;
 }
 
 .second-column {
-  width: 30%;
+  width: auto;
   float: center;
 }
 
@@ -115,6 +146,12 @@ modalp {
 
 
 
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
 
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
@@ -123,6 +160,25 @@ body > .navbar {
   font-size: 13px;
 
 }
+
+/* Standard default hero unit
+-------------------------------------------------- */
+
+.hero-unit-norm {
+padding: 60px;
+margin-bottom: 30px;
+font-size: 18px;
+font-weight: 200;
+line-height: 30px;
+color: inherit;
+background-color: #eeeeee;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+
+/* Red gradient hero unit
+-------------------------------------------------- */
 
 .hero-unit {
   position: relative;
@@ -154,6 +210,7 @@ body > .navbar {
   font-weight: 300;
   line-height: 30px;
   margin-bottom: 30px;
+  padding-left: 10px;
 }
 
 
@@ -398,6 +455,7 @@ hr.soften1 {
   font-weight: 200;
   line-height: 1;
   letter-spacing: -1px;
+  padding-left: 10px;
 }
 
 .marketing h2 {
@@ -1030,6 +1088,9 @@ form.bs-docs-example {
   }
   .marketing .span4 {
     margin-bottom: 40px;
+  }
+  .marketing .span6 {
+    margin-left: 35px;
   }
   .bs-docs-social {
     margin: 0 -20px;

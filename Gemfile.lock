@@ -41,6 +41,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     formtastic-bootstrap (2.1.1)
@@ -126,6 +129,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   commonjs
+  figaro
   formtastic
   formtastic-bootstrap
   jquery-rails
