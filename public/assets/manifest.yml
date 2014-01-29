@@ -1,4 +1,7 @@
 ---
+copyright: copyright
+copyright.png: copyright-c4d39bda2634d97169e9b622cee9e8f7.png
+copyright/index.png: copyright-c4d39bda2634d97169e9b622cee9e8f7.png
 dialingphone.png: dialingphone-b6dacb7b37f011a57c571d53781b3fc4.png
 dialingphone/index.png: dialingphone-b6dacb7b37f011a57c571d53781b3fc4.png
 dollar.png: dollar-347c4fa01fae077d93258948907a3a03.png
@@ -29,8 +32,8 @@ tweet.png: tweet-34b5502516524a05179ee602fe2b2ab7.png
 tweet/index.png: tweet-34b5502516524a05179ee602fe2b2ab7.png
 application.js: application-5e87be05b0f98bbda19200f0ffa3948f.js
 application/index.js: application-5e87be05b0f98bbda19200f0ffa3948f.js
-application.css: application-f6428c9a9fa92ff39e585a7012346bfc.css
-application/index.css: application-f6428c9a9fa92ff39e585a7012346bfc.css
+application.css: application-d2982622aed5c876c187e0d53a0e6dba.css
+application/index.css: application-d2982622aed5c876c187e0d53a0e6dba.css
 fontawesome-webfont.eot: fontawesome-webfont-635909f146e208b3509acdf3b154bf0d.eot
 fontawesome-webfont/index.eot: fontawesome-webfont-635909f146e208b3509acdf3b154bf0d.eot
 fontawesome-webfont.ttf: fontawesome-webfont-6a4e273908b7e43d9e479d38b8ae5957.ttf
