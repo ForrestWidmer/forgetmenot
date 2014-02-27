@@ -1,11 +1,12 @@
-Teststrap::Application.routes.draw do
+Forgetmenot::Application.routes.draw do
+  
+  resources :texts
+
   root to: 'welcome#index'
 
   get "contact/new"
 
   get "contact/create"
-
-  get "welcome/index"
 
   get "welcome/about"
 

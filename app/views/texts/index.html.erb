@@ -1,0 +1,12 @@
+
+
+<div class="container marketing">
+    <div class="row-fluid">
+      <div class="span6 columns text-left">
+        <h1>All Texts</h1>
+          <% @texts.each do |text| %>
+            <p><%= link_to text.title, text %></p>
+          <% end %>
+      </div>
+    </div>
+  </div>

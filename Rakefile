@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Teststrap::Application.load_tasks
+Forgetmenot::Application.load_tasks
