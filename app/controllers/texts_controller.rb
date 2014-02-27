@@ -8,8 +8,32 @@ class TextsController < ApplicationController
   end
 
   def new
+    @text = Text.new
+  end
+
+  def create
+    @text = Text.new(params[:text])
+    if @text.save
+      flash[:notice] = "New text message created."
+      redirect_to @text
+    else
+      flash[:error] = "There was a problem saving your text message, please try again."
+      render :new
+    end
   end
 
   def edit
+    @text = Text.find(params[:id])
+  end
+
+  def update
+    @text = Text.find(params[:id])
+    if @text.update_attributes(params[:text])
+      flash[:notice] = "Text message updated"
+      redirect_to @text
+    else
+      flash[:error] = "There was a problem updating your text message, please try again."
+      render :edit
+    end
   end
 end

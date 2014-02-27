@@ -1,2 +1,36 @@
-<h1>Texts#edit</h1>
-<p>Find me in app/views/texts/edit.html.erb</p>
+<div class="container">    
+  <div class="row-fluid marketing">
+    <div class="span6 columns text-center">
+      <%= form_for @text do |f| %>
+      <fieldset class="fields span12 form-horizontal">
+        
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">    
+          <div class="field">
+            <%= f.label :message %>
+            <%= f.text_area :message %>
+          </div>
+        </div>
+      </div>            
+        
+      <div class="row-fluid">
+        <div class="span12">  
+          <div class="actions text-center">
+            <%= f.submit "Save", class: 'btn btn-large btn-inverse' %>
+          </div>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
