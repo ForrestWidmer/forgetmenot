@@ -1,4 +1,5 @@
 class TextsController < ApplicationController
+
   def index
     @texts = Text.all
   end
@@ -14,6 +15,7 @@ class TextsController < ApplicationController
   def create
     @text = Text.new(params[:text])
     if @text.save
+      TextMailer.text_message(@text)#delay(run_at: 2.minutes.from_now).text_message(@text)
       flash[:notice] = "New text message created."
       redirect_to @text
     else
