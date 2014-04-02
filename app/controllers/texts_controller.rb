@@ -22,7 +22,7 @@ class TextsController < ApplicationController
     @text = current_user.texts.build(params[:text])
     authorize! :create, @text, message: "You need to be signed up to do that!"
     if @text.save
-      TextMailer.delay(run_at: @text.datetime).text_message(@text)#delay(run_at: 2.minutes.from_now).text_message(@text)
+      TextMailer.delay(run_at: @text.datetime).text_message(@text)
       flash[:notice] = "New text message created."
       redirect_to texts_path
     else
