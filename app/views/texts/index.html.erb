@@ -4,6 +4,11 @@
     <div class="row-fluid">
       <div class="span6 columns text-left">
         <h1>All Texts</h1>
+
+        <% if can? :create, Text %>
+          <%= link_to "New Text", new_text_path, class: 'btn btn-primary' %>
+        <% end %>
+        
           <% @texts.each do |text| %>
             <p><%= link_to text.title, text %></p>
             <small>created <%= time_ago_in_words(text.created_at) %></small>

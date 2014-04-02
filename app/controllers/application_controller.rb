@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
 =begin
   around_filter: :set_user_time_zone
 
