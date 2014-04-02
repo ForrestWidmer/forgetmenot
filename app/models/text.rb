@@ -1,3 +1,4 @@
 class Text < ActiveRecord::Base
-  attr_accessible :date, :message, :time, :title
+  attr_accessible :date, :message, :datetime, :title
+
 end

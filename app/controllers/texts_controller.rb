@@ -15,7 +15,7 @@ class TextsController < ApplicationController
   def create
     @text = Text.new(params[:text])
     if @text.save
-      TextMailer.delay(run_at: 1.minute.from_now).text_message(@text)#delay(run_at: 2.minutes.from_now).text_message(@text)
+      TextMailer.delay(run_at: @text.datetime).text_message(@text)#delay(run_at: 2.minutes.from_now).text_message(@text)
       flash[:notice] = "New text message created."
       redirect_to @text
     else
@@ -36,6 +36,15 @@ class TextsController < ApplicationController
     else
       flash[:error] = "There was a problem updating your text message, please try again."
       render :edit
+    end
+  end
+
+  def destroy
+    @text = Text.find(params[:id])
+    @text.destroy
+    if @text.destroy
+      flash[:notice] = "Text deleted!"
+      redirect_to texts_path
     end
   end
 end
