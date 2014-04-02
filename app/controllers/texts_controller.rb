@@ -13,7 +13,7 @@ class TextsController < ApplicationController
   end
 
   def create
-    @text = Text.new(params[:text])
+    @text = current_user.texts.build(params[:text])
     if @text.save
       TextMailer.delay(run_at: @text.datetime).text_message(@text)#delay(run_at: 2.minutes.from_now).text_message(@text)
       flash[:notice] = "New text message created."

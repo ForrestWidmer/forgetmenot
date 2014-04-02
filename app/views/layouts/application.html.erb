@@ -60,7 +60,8 @@
           <%= link_to "Branding", root_path, class: 'brand' %>
           <!--<a class="brand" href="">Cleartime</a>-->
           <div class="nav-collapse collapse">
-            <ul class="nav pull-right">
+
+            <ul class="nav">
               <li class="">
                 <%= link_to "Home", root_path %>
               </li>
@@ -75,6 +76,16 @@
               </li>
             </ul>
           </div>
+
+          <div class="nav pull-right user-info">
+            <% if current_user %>
+              Hello <%= current_user.name || current_user.email %>!
+            <% else %>
+              <li><%= link_to "Sign In", new_user_session_path %></li> or
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <% end %>
+          </div>
+
         </div>
       </div>
     </div>

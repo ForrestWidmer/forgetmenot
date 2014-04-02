@@ -1,5 +1,7 @@
 Forgetmenot::Application.routes.draw do
   
+  devise_for :users
+
   resources :texts
 
   root to: 'welcome#index'
