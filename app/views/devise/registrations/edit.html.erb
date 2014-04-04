@@ -3,8 +3,11 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
+  <div><%= f.label :mobile_number %><i>(ex. 1235551234, no non-number characters)</i><br />
+  <%= f.text_field :mobile_number %></div>
+
+  <div><%= f.label :Mobile_Carrier %><br />
+  <%= f.select :mobile_carrier, options_for_select(User::CARRIER_OPTIONS) %></div>
 
   <div><%= f.label :Time_Zone %><br />
   <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %></div>
