@@ -19,6 +19,7 @@ class TextsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @text = current_user.texts.build(params[:text])
     authorize! :create, @text, message: "You need to be signed up to do that!"
     if @text.save

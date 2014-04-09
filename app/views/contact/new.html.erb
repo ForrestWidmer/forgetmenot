@@ -1,5 +1,4 @@
 <!--  -->
-  <div class="hero-unit-norm">
     <div class="container marketing">
       <div class="row-fluid">
         <div class="span12">
@@ -8,7 +7,6 @@
       </div>
     <hr class="soften">
     </div>
-  </div>
 
       <div class="container">    
         <div class="row-fluid marketing">
@@ -18,16 +16,10 @@
             <br>
             <br>
             <br>
-            <div class="hero-unit-blue">
-              <address>
-                <h2><b>Name Here</b></h2>
-                <h3>Open: Monday - Saturday</h3>
-                <h3>Office Hours: 8:00AM - 8:00PM (MST)</h3>
-                <h3>Office Number: </h3>
-                <h3>Email:</h3>
-              </address>
-            </div>
+            <h1>Hello there!</h1>
+            <h3>Something not working? Have a question? Just want to say hello? Fill out the form and hear back from us within 24 hours! Thanks!</h3>
           </div>
+
           <div class="span6 columns text-center">
           <%= form_for @message, :url => contact_path do |form| %>
           <fieldset class="fields span12 form-horizontal">
@@ -81,7 +73,7 @@
           <div class="row-fluid">
             <div class="span12">  
               <div class="actions text-center">
-                <%= form.submit "Send", class: 'btn btn-large btn-inverse' %>
+                <%= form.submit "Send", class: 'btn btn-large btn-success' %>
               </div>
             </div>
           </div>

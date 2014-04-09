@@ -1,0 +1,37 @@
+<%= form_for @text do |f| %>
+  <fieldset class="fields span12 form-horizontal">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="field">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+      </div>
+    </div>
+      <br>
+    <div class="row-fluid">
+      <div class="span12">    
+        <div class="field">
+          <%= f.label :message %>
+          <%= f.text_area :message %>
+        </div>
+      </div>
+    </div>
+      <br>
+    <div class="row-fluid">
+      <div class="span12">    
+        <div class="field">
+          <%= f.label :date_and_time %>
+          <%= f.datetime_select :datetime, ampm: true, order: [:month, :day, :hour, :minute] %>
+        </div>
+      </div>
+    </div>       
+      <br>
+    <div class="row-fluid">
+      <div class="span12">  
+        <div class="actions text-center">
+          <%= f.submit "Save", class: 'btn btn-large btn-inverse' %>
+        </div>
+      </div>
+    </div>
+<% end %>

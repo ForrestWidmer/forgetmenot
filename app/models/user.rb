@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
                   :mobile_carrier, :mobile_number
   has_many :texts
 
+  validates :mobile_number, length: { maximum: 10 }, presence: true, :numericality => {:only_integer => true}
+  validates :mobile_carrier, presence: true
+
   before_create :set_member
 
   ROLES = %w[member paid admin]

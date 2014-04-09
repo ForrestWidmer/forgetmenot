@@ -1,4 +1,13 @@
-<h1><%= @text.title %></h1>
-<%= link_to "Edit", edit_text_path(@text), class: 'btn btn-mini' %>
-<p><%= button_to "Delete Text", @text, method: :delete, confirm: "Are you sure you want to delete this?" %></p>
-<p><%= @text.message %></p> 
+<div class="container marketing">
+  <div class="row-fluid">
+    <div class="span12">
+      <h1>Title:</h1>
+      <h3><%= @text.title %></h3>
+      <%= link_to "Edit", edit_text_path(@text), class: 'btn btn-success' %>
+      <p><%= button_to "Delete Text", @text, method: :delete, confirm: "Are you sure you want to delete this?", class: "btn btn-success" %></p>
+      <hr class="soften">
+      <h1>Message:</h1>
+      <p><%= @text.message %></p> 
+    </div>
+  </div>
+</div>

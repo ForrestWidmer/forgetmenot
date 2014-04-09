@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "App Name" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "ForgetMeNot!" %></title>
     <%= csrf_meta_tags %>
     <script>
       $(function(){
@@ -57,44 +57,43 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to "Branding", root_path, class: 'brand' %>
-          <!--<a class="brand" href="">Cleartime</a>-->
-          <div class="nav-collapse collapse">
+          <%= link_to "ForgetMeNot!", root_path, class: 'brand' %>
+          <div class="nav-collapse collapse pull-right">
 
             <ul class="nav">
               <li class="">
                 <%= link_to "Home", root_path %>
               </li>
               <li class="">
-                <%= link_to "Contact", contact_new_path %>
+                <%= link_to "Contact Us", contact_new_path %>
               </li>
               <li class="">
-                <%= link_to "My Texts", texts_path %>
+                <%= link_to "How it works!", welcome_about_path %>
               </li>
-              <li class="">
-                <%= link_to "New Texts", new_text_path %>
-              </li>
+              <% if current_user %>
+                <li class="">
+                  <%= link_to "My Texts", texts_path %>
+                </li>
+                <li class="">
+                  <%= link_to "New Text", new_text_path %>
+                </li>
+                <li class="">
+                  <%= link_to "Hello #{current_user.name || current_user.email}!", edit_user_registration_path %>
+                </li>
+                <li class="">
+                  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+                </li>
+              <% end %>
             </ul>
-          </div>
-
-          <div class="nav pull-right user-info">
-            <% if current_user %>
-              Hello <%= current_user.name || current_user.email %>!
-              <%= link_to "Edit User", edit_user_registration_path %>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            <% else %>
-              <li><%= link_to "Sign In", new_user_session_path %></li> or
-              <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <% end %>
           </div>
 
         </div>
       </div>
     </div>
-    <br>
-    <br>
+
     <div class="container">
       <div class="row text-center">
+      <br>
         <%= bootstrap_flash %>
       </div>
       <div class="row">
@@ -112,17 +111,12 @@
       <div class="container">
         <div class="row-fluid">
           <div class="span6 columns">        
-            <p>Tell us about your experience! <a href="https://www.facebook.com/pages/Cleartime-TV-LLC/737683746259428"><img src="/assets/facebook.png"></a></p>
-            <p>On Twitter? Follow us! <a href=""><img src="/assets/tweet.png"></a></p>
+            <p>Tell us about your experience! <a href="https://www.facebook.com/pages/Forrest-Widmer/199264660280690"><img src="/assets/facebook.png"></a></p>
+            <br>
             <p>Website created by <a href="http://www.forrestwidmer.com/">forrestwidmer.com</a></p>
-          </div>
-
-          <div class="span6 columns text-right">
-            <p><a href="#">Back to top</a></p>
-              <p>Owned and Operated by:</p>
-              <p>(602) 666-6666</p>
-              <p>info@website.com</p>
-              <p>Copyright<img src="/assets/copyright.png"></a>2014 Brand</p>
+            <br>
+            <p>Have questions or is something not working like you think it should?</p>
+            <%= link_to "Then send us a message!", contact_new_path %>
           </div>
         </div>
       </div>
