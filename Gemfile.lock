@@ -43,6 +43,7 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     commonjs (0.2.6)
+    daemons (1.1.9)
     delayed_job (4.0.0)
       activesupport (>= 3.0, < 4.1)
     delayed_job_active_record (4.0.0)
@@ -153,6 +154,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   commonjs
+  daemons
   delayed_job_active_record
   devise
   faker
