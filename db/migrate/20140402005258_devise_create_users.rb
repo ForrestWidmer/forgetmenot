@@ -3,7 +3,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     create_table(:users) do |t|
       ## Database authenticatable
       t.string :name
-      t.integer :mobile_number
+      t.integer :mobile_number, :limit => 8
       t.string :mobile_carrier
       t.string :time_zone
       t.string :email,              :null => false, :default => ""
